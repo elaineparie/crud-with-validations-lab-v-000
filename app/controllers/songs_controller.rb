@@ -33,6 +33,11 @@ render :edit
 end
   end
 
+	def destroy
+		Song.find(params[:id]).destroy
+		redirect_to song_url
+	end
+
 	def edit
 	  @song = Song.find(params[:id])
     render :edit
@@ -40,10 +45,6 @@ end
 end
 
 
-  def destroy
-    Song.find(params[:id]).destroy
-    redirect_to song_url
-  end
 
   private
 
